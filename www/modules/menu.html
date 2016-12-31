@@ -1,0 +1,76 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-assertive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+    
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+
+    <ion-content scroll="true">
+      <div style = " overflow: hidden; background: url(img/material4.jpg); background-size: 100% auto;" class = "side-jumbo">
+        <img style = "margin-left:12px; margin-top:24px; margin-bottom:0px; width:70px; border-radius: 70px; height:70px"src="img/logo.png">
+        <h4 class = "padding-left">Fafa</h4>
+        <p class = "padding-left">osindex</p>
+      </div>
+
+
+    <div class = "list" style = "background-color:#fff">
+      <a menu-close href="#/app/dash" class = "item item-icon-left">
+        <i style = "" class="icon ion-home"></i>
+        Home
+      </a><br>
+      <a menu-close href="#/app/contact" class = "item item-icon-left">
+        <i style = "" class="icon ion-briefcase"></i>
+        Inbox
+      </a>
+      <br>
+      <a menu-close href="#/app/sms" class = "item item-icon-left">
+        <i style = "" class="icon ion-chatbox-working"></i>
+        Notification
+      </a>
+      <br>
+      <a menu-close href="#/app/email" class = "item item-icon-left">
+        <i style = "" class="icon ion-email"></i>
+        Request
+      </a>
+      <br>
+      <a menu-close href="#/app/sn" class = "item item-icon-left">
+        <i class="icon ion-chatbubbles"></i>
+        Social Network
+      </a>
+      <br>
+      <a menu-close href="#/app/calendar" class = "item item-icon-left">
+       <i class="icon ion-calendar"></i>
+        Calender
+      </a>
+
+      <div class="item item-divider">Account</div>
+      <a menu-close href="#/app/sn" class = "item item-icon-left">
+        <i class="icon ion-chatbubbles"></i>
+        Profile
+      </a>
+      <br>
+      <a menu-close href="#/login" class = "item item-icon-left">
+        <i class="icon ion-chatbubbles"></i>
+        Sign Out
+      </a>
+      <br>
+     </div>
+
+      
+
+      <ion-list>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

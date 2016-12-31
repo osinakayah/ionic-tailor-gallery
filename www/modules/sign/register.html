@@ -1,0 +1,68 @@
+
+<ion-view view-title = "Register">
+	<!-- <ion-nav-bar class="bar-assertive" >
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar> -->
+<ion-content scroll="false" class="light-bg padding-left padding-right">
+	<div class = "side-jumbo" >
+    	<center class="padding"><img style = "width:230px; height:200px"src="img/logo.png"></center>
+    </div>
+
+    <div class="padding text-center login-notifi" ng-show="loginData.not">
+			<span>{{notMsg}}</span>
+	</div>
+	
+	<form  class = "" name="loginForm" ng-submit="doLogin()" novalidate>
+		  	<div class="list" style="border-radius: 122px">
+				<div class="light-bg">
+					<label class="item item-input item-floating-label">
+						<span class="input-label dark light">Email</span>
+						<input name="emailField" type="email" ng-model = "loginData.email" placeholder="Enter Email" required>
+					</label>
+					<label class="item item-input item-floating-label">
+						<span class="input-label">Password</span>
+						<input name="passwordField" type="password" ng-model = "loginData.password" placeholder="Enter Password" required>
+					</label>
+					<label class = "item item-input item-select">
+					   <div class = "input-label">
+					      Select State
+					   </div>
+						
+					   <select>
+					      <option>Option 1</option>
+					      <option selected>Option 2</option>
+					      <option>Option 3</option>
+					   </select>
+					</label>
+					<label class = "item item-input item-select">
+					   <div class = "input-label">
+					      Select City
+					   </div>
+						
+					   <select>
+					      <option>Option 1</option>
+					      <option selected>Option 2</option>
+					      <option>Option 3</option>
+					   </select>
+					</label>
+				</div>
+				<label class="item">
+					<button ng-disabled="loginForm.$invalid" class=" button button-raised button-block button-assertive" type="submit">Register</button>
+				</label>
+			</div>
+	</form>
+
+
+	
+	<div class="text-center padding-bottom">Already have an account?
+		<a href="#/app/dash" class="icon-right">Sign in</a>
+	</div>
+
+	 <div class="button-bar social-login">
+        <button class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+</button>
+        <button class="button button-small button-border icon-left ion-social-twitter button-calm">Twitter</button>
+        <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+    </div>
+</ion-content>
+</ion-view>
