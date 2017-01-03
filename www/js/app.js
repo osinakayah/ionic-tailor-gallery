@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('fafa', ['ionic', 'ionic-material', 'ngCordova'])
+angular.module('fafa', ['ionic', 'ionic-material', 'ngCordova', 'ngResource'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,17 +22,20 @@ angular.module('fafa', ['ionic', 'ionic-material', 'ngCordova'])
     }
   });
 })
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $resourceProvider) {
+  $resourceProvider.defaults.stripTrailingSlashes = false;
   $stateProvider
 
     .state('login', {
       url: "/login",
-      templateUrl: "modules/sign/login.html"
+      templateUrl: "modules/sign/login.html",
+      controller:'UserCtrl'
     })
 
     .state('register', {
       url: "/register",
-      templateUrl: "modules/sign/register.html"
+      templateUrl: "modules/sign/register.html",
+      controller:'UserCtrl'
     })
 
     .state('app', {
@@ -41,12 +44,64 @@ angular.module('fafa', ['ionic', 'ionic-material', 'ngCordova'])
       templateUrl: "modules/menu.html"
     })
 
+    .state('category', {
+      url: "/dash/:category",
+      templateUrl: "modules/category/index.html",
+       controller:'CategoryCtrl'
+    })
+
+    .state('tailor', {
+      url: "/tailor",
+      templateUrl: "modules/tailor/profile.html",
+       controller:'TailorCtrl'
+    })
+
      .state('app.dash', {
       url: '/dash',
       views: {
         'menuContent': {
           templateUrl: 'modules/home.html',
           controller:'HomeCtrl'
+        }
+      }
+    })
+
+     .state('app.notification', {
+      url: '/notification',
+      views: {
+        'menuContent': {
+          templateUrl: 'modules/notification/home.html',
+          controller:'NotificationCtrl'
+        }
+      }
+    })
+
+     .state('app.clothes', {
+      url: '/clothes',
+      views: {
+        'menuContent': {
+          templateUrl: 'modules/clothes/my_clothes.html',
+          controller:'ClothCtrl'
+        }
+      }
+    })
+
+     .state('app.pending_clothes', {
+      url: '/pending_clothes',
+      views: {
+        'menuContent': {
+          templateUrl: 'modules/clothes/pending.html',
+          controller:'ClothCtrl'
+        }
+      }
+    })
+
+    .state('app.profile', {
+      url: '/profile',
+      views: {
+        'menuContent': {
+          templateUrl: 'modules/sign/profile.html',
+          controller:'UserCtrl'
         }
       }
     })

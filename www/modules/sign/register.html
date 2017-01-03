@@ -1,10 +1,10 @@
 
 <ion-view view-title = "Register">
-	<!-- <ion-nav-bar class="bar-assertive" >
+	 <ion-nav-bar class="bar-assertive" >
         <ion-nav-back-button>
         </ion-nav-back-button>
-    </ion-nav-bar> -->
-<ion-content scroll="false" class="light-bg padding-left padding-right">
+    </ion-nav-bar>
+<ion-content scroll="true" class="dark-bg padding-left padding-right">
 	<div class = "side-jumbo" >
     	<center class="padding"><img style = "width:230px; height:200px"src="img/logo.png"></center>
     </div>
@@ -16,6 +16,14 @@
 	<form  class = "" name="loginForm" ng-submit="doLogin()" novalidate>
 		  	<div class="list" style="border-radius: 122px">
 				<div class="light-bg">
+					<label class="item item-input item-floating-label">
+						<span class="input-label dark light">Username</span>
+						<input name="emailField" type="email" ng-model = "loginData.email" placeholder="Enter Username" required>
+					</label>
+					<label class="item item-input item-floating-label">
+						<span class="input-label dark light">Fullname</span>
+						<input name="emailField" type="email" ng-model = "loginData.email" placeholder="Enter Fullname" required>
+					</label>
 					<label class="item item-input item-floating-label">
 						<span class="input-label dark light">Email</span>
 						<input name="emailField" type="email" ng-model = "loginData.email" placeholder="Enter Email" required>
@@ -55,8 +63,8 @@
 
 
 	
-	<div class="text-center padding-bottom">Already have an account?
-		<a href="#/app/dash" class="icon-right">Sign in</a>
+	<div class="text-center light padding-bottom">Already have an account?
+		<a href="#/app/dash" class="icon-right calm">Sign in</a>
 	</div>
 
 	 <div class="button-bar social-login">
@@ -64,5 +72,6 @@
         <button class="button button-small button-border icon-left ion-social-twitter button-calm">Twitter</button>
         <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
     </div>
+    <br>
 </ion-content>
 </ion-view>

@@ -8,6 +8,18 @@
    width: 100%;
 }
 .row{
-	padding:0px;
-	margin:0px;
+	padding:0px!important;
+	margin:0px!important;
+}
+.not-thumb > img {
+	//border-radius: 0px!important;
+}
+.tailor > .item img{
+	width:100%;
+	height: auto;
+}
+.tailor-header > .item > img{
+	/*width: 100px;
+	height: 100px;
+	border-radius: 100px;*/
 }

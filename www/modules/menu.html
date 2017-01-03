@@ -11,7 +11,7 @@
 
     </ion-nav-bar>
     
-    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
@@ -24,44 +24,40 @@
       </div>
 
 
-    <div class = "list" style = "background-color:#fff">
+    <div class = "list">
       <a menu-close href="#/app/dash" class = "item item-icon-left">
         <i style = "" class="icon ion-home"></i>
         Home
       </a><br>
-      <a menu-close href="#/app/contact" class = "item item-icon-left">
-        <i style = "" class="icon ion-briefcase"></i>
-        Inbox
-      </a>
-      <br>
-      <a menu-close href="#/app/sms" class = "item item-icon-left">
-        <i style = "" class="icon ion-chatbox-working"></i>
+      
+      <a menu-close href="#/app/notification" class = "item item-icon-left">
+        <i style = "" class="icon ion-ios-bell"></i>
         Notification
+        <span class="badge badge-assertive">1</span>
       </a>
       <br>
-      <a menu-close href="#/app/email" class = "item item-icon-left">
-        <i style = "" class="icon ion-email"></i>
-        Request
+      <div class="item item-divider">Wardrope</div>
+      <br>
+      <a menu-close href="#/app/clothes" class = "item item-icon-left">
+        <i style = "" class="icon ion-tshirt"></i>
+        Clothes
       </a>
       <br>
-      <a menu-close href="#/app/sn" class = "item item-icon-left">
-        <i class="icon ion-chatbubbles"></i>
-        Social Network
+      <a menu-close href="#/app/pending_clothes" class = "item item-icon-left">
+        <i class="icon ion-alert-circled"></i>
+        Pending
       </a>
-      <br>
-      <a menu-close href="#/app/calendar" class = "item item-icon-left">
-       <i class="icon ion-calendar"></i>
-        Calender
-      </a>
+      
 
       <div class="item item-divider">Account</div>
-      <a menu-close href="#/app/sn" class = "item item-icon-left">
-        <i class="icon ion-chatbubbles"></i>
+      <br>
+      <a menu-close href="#/app/profile" class = "item item-icon-left">
+        <i class="icon ion-person"></i>
         Profile
       </a>
       <br>
       <a menu-close href="#/login" class = "item item-icon-left">
-        <i class="icon ion-chatbubbles"></i>
+        <i class="icon ion-log-out"></i>
         Sign Out
       </a>
       <br>
