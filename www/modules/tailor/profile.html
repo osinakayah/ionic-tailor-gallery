@@ -1,42 +1,50 @@
-<ion-view view-title="Ojil Wears">
+<ion-view view-title="{{designer.name}}">
 
 	<ion-nav-bar class="bar-assertive" >
-        <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-arrow-left-c" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
+		<ion-nav-back-button></ion-nav-back-button>
+
       <ion-nav-buttons side="right">
-        <button class="button button-icon button-clear ion-star" menu-toggle="left">
+        <button ng-click="likeDesigner()" class="button button-icon button-clear ion-star">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
 	<ion-content class="stable-bg">
+
 		<div class="card list ">
 			<div class="item item-thumbnail-left">
 				<img src="img/img4.jpg" />
-				<h2>08160831611</h2>
-				<p>No 1 Khana Street Portharourt Rivers state</p>
-				<p>89% Trust</p>
+				<h2>{{designer.num}}</h2>
+				<p>{{designer.addr}}</p>
+				<p>{{designer.trust}}% Trust</p>
 				<br>
 			</div>
 		</div>
 
+		<center>
+	  		<div style="padding-top: 50%" ng-show="isNoNetwork">
+		  		<h4 class="dark">No Network Connection</h4>
+		  		<button class="button button-small button-assertive" ng-click="loadMoreDesigns()">Retry</button>
+		  	</div>
+	  	</center>
+		
 		<div class="list">
-			<div class="tailor card">
+
+			<div class="tailor card" ng-repeat="design in designs">
 			  <div class="item item-image">
-			    <img src="img/img4.jpg">
+			  	<div class="hero" style = " overflow: hidden; background: url(img/load.gif); background-size: 100% auto;">
+			  		<img ng-src="{{host+design.image}}" style="width: 100%; height:auto" ng-click="fullview(host+design.image)">
+			  	</div>
+			    
 			  </div>
 			</div>
-			<div class="tailor card">
-			  <div class="item item-image">
-			    <img src="img/img4.jpg">
-			  </div>
-			</div>
-			<div class="tailor card">
-			  <div class="item item-image">
-			    <img src="img/img4.jpg">
-			  </div>
-			</div>
+			
+			
 		</div>
+		<ion-infinite-scroll
+			immediate-check="false"
+			ng-if="hasNext()"
+		    on-infinite="loadMoreDesigns()"
+		    distance="2%">
+		</ion-infinite-scroll>
     </ion-content>
 </ion-view>

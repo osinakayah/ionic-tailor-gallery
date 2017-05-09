@@ -1,56 +1,57 @@
-<ion-view view-title="Male">
-	<ion-nav-bar class="bar-assertive" >
-        <ion-nav-buttons side="left">
-        
-      	</ion-nav-buttons>
-    </ion-nav-bar>
+<ion-view view-title="{{catName}}">
+		<ion-nav-bar class="bar-assertive" >
+			<ion-nav-buttons side="left">
+				<button class="button button-icon button-clear ion-arrow-left-c" ng-click="goBack()">
+				</button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
 	<ion-content class="stable-bg">
-		<div class="list">
-			<div class="tailor card">
-  				<div ui-sref="tailor" class="item item-avatar ink">
+		<!-- <ion-refresher
+		    pulling-text="Pull to refresh..."
+		    on-refresh="doRefresh()">
+	  	</ion-refresher> -->
+	  	<center>
+	  		<div style="padding-top: 50%" ng-show="isNoNetwork">
+		  		<h4 class="dark">No Network Connection</h4>
+		  		<button class="button button-small button-assertive" ng-click="loadMoreDesigns()">Retry</button>
+		  	</div>
+	  	</center>
+	  	<center>
+	  		<div style="padding-top: 50%" ng-show="noCloth">
+		  		<h4 class="dark">No Designs Found</h4>
+		  	</div>
+	  	</center>
+	  	<center>
+	  		<div style="padding-top: 50%" ng-show="noData">
+		  		<h4 class="dark">Oops, an error occured</h4>
+		  		<button class="button button-small button-assertive" ng-click="loadMoreDesigns()">Retry</button>
+		  	</div>
+	  	</center>
+	  	
+		<div class="list"  ng-show="!isNoNetwork">
+
+
+			<div class="tailor card" ng-repeat="design in designs">
+  				<div ng-click="selectTailor(design.fullname, design.phoneNumber, design.address, design.trust, design.designer_id)" class="item item-avatar">
 				    <img src="img/logo.png">
-				    <h2>Pretty Hate Machine</h2>
-				    <p>Nine Inch Nails</p>
+				    <h2>{{design.fullname}}</h2>
+				    <p>{{design.name}}</p>
 			    </div>
 
-			  <div class="item item-image">
-			    <img src="img/img4.jpg">
+			  <div class="item item-image hero" style = " overflow: hidden; background: url(img/load.gif); background-size: 100% auto;">
+			    <img ng-src="{{host+design.image}}" style="width: 100%; height:auto" ng-click="showFullView(design.image)">
 			  </div>
-			</div>
-			<div class="tailor card">
-  				<div ui-sref="tailor" class="item item-avatar">
-				    <img src="img/logo.png">
-				    <h2>Pretty Hate Machine</h2>
-				    <p>Nine Inch Nails</p>
-			    </div>
-
-			  <div class="item item-image">
-			    <img src="img/img4.jpg">
-			  </div>
-			</div>
-			<div class="tailor card">
-  				<div ui-sref="tailor" class="item item-avatar">
-				    <img src="img/logo.png">
-				    <h2>Pretty Hate Machine</h2>
-				    <p>Nine Inch Nails</p>
-			    </div>
-
-			  <div class="item item-image">
-			    <img src="img/img4.jpg">
-			  </div>
-			</div>
-			<div class="tailor card">
-  				<div ui-sref="tailor" class="item item-avatar">
-				    <img src="img/logo.png">
-				    <h2>Pretty Hate Machine</h2>
-				    <p>Nine Inch Nails</p>
-			    </div>
-
-			  <div class="item item-image">
-			    <img src="img/img4.jpg">
+			  <div class="item item-icon-left assertive">
+			    <i class="icon {{ design.isLike | likebtn}}" ng-click="likeDesign(design.design_id)"></i>
 			  </div>
 			</div>
 		</div>
+		<ion-infinite-scroll
+			immediate-check="false"
+			ng-if="hasNext()"
+		    on-infinite="loadMoreDesigns()"
+		    distance="2%">
+		</ion-infinite-scroll>
 
     </ion-content>
 </ion-view>

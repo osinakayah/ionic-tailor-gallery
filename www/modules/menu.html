@@ -1,8 +1,7 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-assertive" >
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+      <!--<ion-nav-back-button></ion-nav-back-button>-->
 
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
@@ -17,10 +16,10 @@
   <ion-side-menu side="left">
 
     <ion-content scroll="true">
-      <div style = " overflow: hidden; background: url(img/material4.jpg); background-size: 100% auto;" class = "side-jumbo">
+      <div class = "padding-bottom" style = " overflow: hidden; background: url(img/material4.jpg); background-size: 100% auto;" class = "side-jumbo">
         <img style = "margin-left:12px; margin-top:24px; margin-bottom:0px; width:70px; border-radius: 70px; height:70px"src="img/logo.png">
         <h4 class = "padding-left">Fafa</h4>
-        <p class = "padding-left">osindex</p>
+        <!-- <p class = "padding-left">osindex</p> -->
       </div>
 
 
@@ -33,7 +32,7 @@
       <a menu-close href="#/app/notification" class = "item item-icon-left">
         <i style = "" class="icon ion-ios-bell"></i>
         Notification
-        <span class="badge badge-assertive">1</span>
+        <!-- <span class="badge badge-assertive">1</span> -->
       </a>
       <br>
       <div class="item item-divider">Wardrope</div>
@@ -47,20 +46,17 @@
         <i class="icon ion-alert-circled"></i>
         Pending
       </a>
-      
-
-      <div class="item item-divider">Account</div>
-      <br>
-      <a menu-close href="#/app/profile" class = "item item-icon-left">
+      <!-- <br>
+      <a menu-close href="#/app/clothes" class = "item item-icon-left">
+        <i style = "" class="icon ion-wand"></i>
+        WishList
+      </a> -->
+      <hr>
+      <div menu-close ng-click="myAccount()" class = "item item-icon-left">
         <i class="icon ion-person"></i>
-        Profile
-      </a>
-      <br>
-      <a menu-close href="#/login" class = "item item-icon-left">
-        <i class="icon ion-log-out"></i>
-        Sign Out
-      </a>
-      <br>
+        My Acount
+      </div>
+      
      </div>
 
       

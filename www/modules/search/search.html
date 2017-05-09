@@ -1,0 +1,84 @@
+<ion-view view-title="Search">
+    <ion-nav-bar class="bar-assertive">
+    </ion-nav-bar>
+
+    
+	<ion-content class="stable-bg has-header">
+        <div class="list card">
+            <label class="item item-input dark">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input ng-model="search.username" type="text" placeholder="Search Designers..." ng-change="searchUsername()"/>
+            </label>
+        </div>
+        <center>
+            <div style="padding-top: 50%" ng-show="isNoNetwork">
+                <h4 class="dark">No Network Connection</h4>
+                <button class="button button-small button-assertive" ng-click="loadMyClothes()">Retry</button>
+            </div>
+        </center>
+        
+        <div class="list card ">
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-avatar" href="#">
+              <img src="img/logo.png">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
+        </div>
+    		<!-- <ion-infinite-scroll
+                immediate-check="false"
+                ng-if="hasNext()"
+                on-infinite="loadMyClothes()"
+                distance="12%">
+            </ion-infinite-scroll> -->
+    </ion-content>
+</ion-view>

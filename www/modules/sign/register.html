@@ -9,54 +9,52 @@
     	<center class="padding"><img style = "width:230px; height:200px"src="img/logo.png"></center>
     </div>
 
-    <div class="padding text-center login-notifi" ng-show="loginData.not">
+    <div class="padding text-center login-notifi" ng-show="registerData.not">
 			<span>{{notMsg}}</span>
 	</div>
 	
-	<form  class = "" name="loginForm" ng-submit="doLogin()" novalidate>
-		  	<div class="list" style="border-radius: 122px">
-				<div class="light-bg">
-					<label class="item item-input item-floating-label">
-						<span class="input-label dark light">Username</span>
-						<input name="emailField" type="email" ng-model = "loginData.email" placeholder="Enter Username" required>
-					</label>
-					<label class="item item-input item-floating-label">
-						<span class="input-label dark light">Fullname</span>
-						<input name="emailField" type="email" ng-model = "loginData.email" placeholder="Enter Fullname" required>
-					</label>
-					<label class="item item-input item-floating-label">
-						<span class="input-label dark light">Email</span>
-						<input name="emailField" type="email" ng-model = "loginData.email" placeholder="Enter Email" required>
-					</label>
-					<label class="item item-input item-floating-label">
-						<span class="input-label">Password</span>
-						<input name="passwordField" type="password" ng-model = "loginData.password" placeholder="Enter Password" required>
-					</label>
-					<label class = "item item-input item-select">
-					   <div class = "input-label">
-					      Select State
-					   </div>
-						
-					   <select>
-					      <option>Option 1</option>
-					      <option selected>Option 2</option>
-					      <option>Option 3</option>
-					   </select>
-					</label>
-					<label class = "item item-input item-select">
-					   <div class = "input-label">
-					      Select City
-					   </div>
-						
-					   <select>
-					      <option>Option 1</option>
-					      <option selected>Option 2</option>
-					      <option>Option 3</option>
-					   </select>
-					</label>
-				</div>
+	<form  name="registerForm" ng-submit="doRegister()" novalidate>
+		  	<div class="list card">
+				
+				<label class="item item-input item-floating-label">
+					<span class="input-label dark light">Username</span>
+					<input name="usernameField" type="text" ng-model = "registerData.username" placeholder="Enter Username" required>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label dark light">Fullname</span>
+					<input name="nameField" type="text" ng-model = "registerData.fullname" placeholder="Enter Fullname" required>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label dark light">Email</span>
+					<input name="emailField" type="email" ng-model = "registerData.email" placeholder="Enter Email" required>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Password</span>
+					<input name="passwordField" type="password" ng-model = "registerData.password" placeholder="Enter Password" required>
+				</label>
+				<label class = "item item-input item-select">
+				   <div class = "input-label">
+				      Select State
+				   </div>
+					
+				   <select ng-model="registerData.state" ng-change="loadLocals()">
+				   	  <option selected></option>
+				      <option ng-repeat="s in states" value="{{s.id}}">{{s.name}}</option>
+				   </select>
+				</label>
+				<label class = "item item-input item-select">
+				   <div class = "input-label">
+				      Select City
+				   </div>
+					
+				   <select ng-model="registerData.local">
+				      <option ng-repeat="local in locals" value="{{local.id}}">{{local.local_name}}</option>
+				     
+				   </select>
+				</label>
+				
 				<label class="item">
-					<button ng-disabled="loginForm.$invalid" class=" button button-raised button-block button-assertive" type="submit">Register</button>
+					<button ng-disabled="registerForm.$invalid" class=" button button-raised button-block button-assertive" type="submit">Register</button>
 				</label>
 			</div>
 	</form>

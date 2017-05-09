@@ -1,5 +1,13 @@
 <ion-view view-title="Profile">
-    <ion-content>
+    <!--<ion-nav-bar class="bar-assertive" >-->
+        <!--<ion-nav-buttons side="right">-->
+            <!--<button ng-click="openPopover($event)" class="button button-icon button-clear ion-android-more-vertical"></button>-->
+        <!--</ion-nav-buttons>-->
+    <!--</ion-nav-bar>-->
+
+
+
+    <ion-content class="stable-bg">
         <div class="hero slide-up" style = " overflow: hidden; background: url(img/material1.jpg); background-size: 100% auto;" class = "side-jumbo">
         <div class="content">
             <div class="avatar" style="background-image: url('img/img5.jpg');"></div>
@@ -17,21 +25,42 @@
             <a ui-sref="app.edit" class="tab-item">
                 <i class="icon ion-edit"></i> Edit
             </a>
+            <div ng-click="logout()" class="tab-item">
+                <i class="icon ion-log-out"></i>Log out
+            </div>
         </div>
-         <h4 class="content padding double-padding-x">Favorites Designers</h4>
-         <div class="list animate-fade-slide-in-right">
-            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
-                <img src="img/img1.jpg">
-                <h2>Jon Snow</h2>
-                <p>Da illest illegitimate</p>
-                <i class="icon ion-close-round"></i>
-            </a>
-            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
-                <img src="img/img2.jpg">
-                <h2>Sansa Stark</h2>
-                <p>&amp; Joffrey <strike>sitting</strike> sat in a tree</p>
-                <i class="icon ion-close-round"></i>
-            </a>
+
+        <div class = "card list">
+            <div class="item item-divider light-bg">ACCOUNT DETAILS</div>
+            <div href="#" class="item item-icon-left item-button-right">
+                <i style = "" class="icon ion-cash"></i>
+                &#x20a6;3,000
+                <button class="button button-outline button-assertive">
+                    Top up
+                </button>
+            </div>
         </div>
+
+        <!--<div class = "card list">-->
+            <!--<div class="item item-divider light-bg">FAVORITES DESIGNERS</div>-->
+            <!--<a ui-sref="app.friends" class="item item-avatar item-icon-right">-->
+                <!--<img src="img/img1.jpg">-->
+                <!--<h2>Jon Snow</h2>-->
+                <!--<p>Da illest illegitimate</p>-->
+                <!--<i class="icon ion-close-round"></i>-->
+            <!--</a>-->
+            <!--<a ui-sref="app.friends" class="item item-avatar item-icon-right">-->
+                <!--<img src="img/img1.jpg">-->
+                <!--<h2>Jon Snow</h2>-->
+                <!--<p>Da illest illegitimate</p>-->
+                <!--<i class="icon ion-close-round"></i>-->
+            <!--</a>-->
+            <!--<a ui-sref="app.friends" class="item item-avatar item-icon-right">-->
+                <!--<img src="img/img2.jpg">-->
+                <!--<h2>Sansa Stark</h2>-->
+                <!--<p>&amp; Joffrey <strike>sitting</strike> sat in a tree</p>-->
+                <!--<i class="icon ion-close-round"></i>-->
+            <!--</a>-->
+        <!--</div>-->
     </ion-content>
 </ion-view>

@@ -1,34 +1,40 @@
 <ion-view view-title="Pending Clothes">
 	<ion-content class="stable-bg">
-  		<div class="list card animate-fade-slide-in-right">
 
-    		<div class="item item-avatar" href="#">
-      			<img src="img/img2.jpg">
-            <span class="item-balanced item-note">
-              23/Dec/2016
-            </span>
-      			<h2>Venkman</h2>
-      			<p>Back off, man. I'm a scientist.</p>
-    		</div>
+        <center>
+            <div style="padding-top: 50%" ng-show="isNoNetwork">
+                <h4 class="dark">No Network Connection</h4>
+                <button class="button button-small button-assertive" ng-click="loadMyClothes()">Retry</button>
+            </div>
+        </center>
+        <center>
+            <div style="padding-top: 50%" ng-show="isNoCloth">
+                <h4 class="dark">No clothes found</h4>
+                <p>Start making clothes through fafa to populate your wardrope</p>
+            </div>
+        </center>
 
-    		<div class="item item-avatar" href="#">
-            <img src="img/img2.jpg">
-            <span class="item-balanced item-note">
-              23/Dec/2016
-            </span>
-            <h2>Venkman</h2>
-            <p>Back off, man. I'm a scientist.</p>
-        </div>
-
-    		<div class="item item-avatar" href="#">
-            <img src="img/img2.jpg">
-            <span class="item-balanced item-note">
-              23/Dec/2016
-            </span>
-            <h2>Venkman</h2>
-            <p>Back off, man. I'm a scientist.</p>
-        </div>
-
-		</div>
+        <center>
+            <div style="padding-top: 50%" ng-show="isError">
+                <h4 class="dark">Oops, an error occured</h4>
+                <button class="button button-small button-assertive" ng-click="loadMyClothes()">Retry</button>
+            </div>
+        </center>
+  		<ul class="list card">
+            <li class="item" ng-repeat="cloth in clothes">
+                <span class="item-note">
+                &#x20a6;{{cloth.price}}
+              </span>
+                <h2>{{cloth.title}}</h2>
+                <p>{{cloth.description}}</p>
+            </li>
+        
+        </ul>
+    		<ion-infinite-scroll
+                immediate-check="false"
+                ng-if="hasNext()"
+                on-infinite="loadMyClothes()"
+                distance="12%">
+            </ion-infinite-scroll>
     </ion-content>
 </ion-view>
